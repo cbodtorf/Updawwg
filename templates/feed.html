@@ -1,8 +1,8 @@
 <!-- ng-controller="FeedController" -->
 
 <section >
-
-      <video id="videoGfy0" autoplay="autoplay" muted="" loop="" ng-attr-poster="//thumbs.gfycat.com/{{ feeds.videoPageGfyFrame.gfyName }}-poster.jpg" poster="//thumbs.gfycat.com/MemorableYellowishDungbeetle-poster.jpg">
+      <button type="button" name="pop" ng-click="showDogs()"></button>
+      <!-- <video ng-click="dogDeets()" id="videoGfy0" autoplay="autoplay" muted="" loop="" ng-attr-poster="//thumbs.gfycat.com/{{ feeds.videoPageGfyFrame.gfyName }}-poster.jpg" poster="//thumbs.gfycat.com/MemorableYellowishDungbeetle-poster.jpg">
         <source data-ng-src="https://zippy.gfycat.com/MemorableYellowishDungbeetle.webm" type="video/webm" src="https://zippy.gfycat.com/MemorableYellowishDungbeetle.webm">
         <source data-ng-src="https://fat.gfycat.com/MemorableYellowishDungbeetle.mp4" type="video/mp4" src="https://fat.gfycat.com/MemorableYellowishDungbeetle.mp4">
       </video>
@@ -22,10 +22,10 @@
       <video class='threeSize' autoplay="autoplay" muted="" ng-attr-poster="{{ detailPlayer.list[detailPlayer.index].thumbnail}}" loop="">
             <source data-ng-src="https://fat.gfycat.com/ScarceInsistentEnglishsetter.webm" type="video/webm" src="https://fat.gfycat.com/ScarceInsistentEnglishsetter.webm">
             <source data-ng-src="https://giant.gfycat.com/ScarceInsistentEnglishsetter.mp4" type="video/mp4" src="https://giant.gfycat.com/ScarceInsistentEnglishsetter.mp4">
-        </video>
+        </video> -->
 
-    <div class="dog" ng-click="deets()" ng-repeat="dog in dawgz">
-        <img src="" alt="" />
+    <div class="dog" ng-click="dogDeets()" ng-repeat="dog in dawgz">
+        <h1>{{dog.name}}</h1>
     </div>
 
 

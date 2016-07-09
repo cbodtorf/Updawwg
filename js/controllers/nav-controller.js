@@ -5,7 +5,7 @@
 
 module.exports = function(app) {
 
-  app.controller('NavController', ['$scope', function($scope){
+  app.controller('NavController', ['$scope', 'DogService', function($scope, DogService){
 
     /*******************************
     * menu collapse
