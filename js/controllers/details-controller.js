@@ -6,10 +6,11 @@
 module.exports = function(app) {
 
   app.controller('DetailsController', ['$scope', 'DogService', function( $scope, DogService ){
-      $scope.dog = {};
+      $scope.dog = DogService.dogD;
 
       $scope.upDawg = function () {
-        DogService.setUps();
+        console.log("dogD", $scope.dog);
+        DogService.setUps($scope.dog);
       }
 
       $scope.back = function () {

@@ -15,9 +15,10 @@ module.exports = function(app) {
 
 
     //probably need to add dog id and stuff
-    $scope.dogDeets = function() {
+    $scope.dogDeets = function(dogObj) {
       console.log('hello trying to get deets');
-      let dogObj = {};
+      // let dogObj = {};
+      DogService.dogDeets(dogObj);
       location.href = '#/details';
 
 

@@ -9,6 +9,8 @@ module.exports = function(app) {
 
       let dawgz = [];
 
+      let dogD = {};
+
       let dog = {
         name: '',
         image: '',
@@ -36,9 +38,10 @@ module.exports = function(app) {
           return dawgz;
         },
 
-        getDog(name) {
-          //filter: find dog by name
-
+        dogDeets(dogObj) {
+          dogD = dogObj;
+          console.log(dogD);
+          return dogD
         },
 
         //adds new dog to database

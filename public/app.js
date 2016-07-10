@@ -45,10 +45,11 @@ module.exports = function(app) {
 module.exports = function(app) {
 
   app.controller('DetailsController', ['$scope', 'DogService', function( $scope, DogService ){
-      $scope.dog = {};
+      $scope.dog = DogService.dogD;
 
       $scope.upDawg = function () {
-        DogService.setUps();
+        console.log("dogD", $scope.dog);
+        DogService.setUps($scope.dog);
       }
 
       $scope.back = function () {
@@ -76,9 +77,10 @@ module.exports = function(app) {
 
 
     //probably need to add dog id and stuff
-    $scope.dogDeets = function() {
+    $scope.dogDeets = function(dogObj) {
       console.log('hello trying to get deets');
-      let dogObj = {};
+      // let dogObj = {};
+      DogService.dogDeets(dogObj);
       location.href = '#/details';
 
 
@@ -176,6 +178,8 @@ module.exports = function(app) {
 
       let dawgz = [];
 
+      let dogD = {};
+
       let dog = {
         name: '',
         image: '',
@@ -203,9 +207,10 @@ module.exports = function(app) {
           return dawgz;
         },
 
-        getDog(name) {
-          //filter: find dog by name
-
+        dogDeets(dogObj) {
+          dogD = dogObj;
+          console.log(dogD);
+          return dogD
         },
 
         //adds new dog to database
