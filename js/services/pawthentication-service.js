@@ -3,9 +3,10 @@ module.exports = function(app) {
     app.factory('PawthenticationService', ['$http', '$rootScope', '$cookies', '$location', function($http, $rootScope, $cookies, $location) {
         let service = {};
         //Service functions*******************************
-        service.LogIn = function(username, password, callback) {
+        service.LogIn = function(name, password, callback) {
+            console.log(name,password);
             $http.post('/users', {
-                    name: username,
+                    name: name,
                     password: password
                 })
                 .success(function(response) {
@@ -14,11 +15,11 @@ module.exports = function(app) {
                     $location.path('/about');
                 });
         }; //service.LogIn ends***********************
-        service.SetCredentials = function(username, password) {
+        service.SetCredentials = function(name, password) {
 
             $rootScope.globals = {
                 currentUser: {
-                    name: username,
+                    name: name,
                     password: password
                 }
             };
